@@ -19,6 +19,7 @@ export type CssSchema = {
 export type ChildrenSchema = { children?: ReactNode };
 export type OtherChildrenSchema = { other?: ReactNode };
 export type TitleSchema = { title?: string };
+export type SizeSchema = { size?: string };
 export type ErrorMsgSchema = { errorMsg?: string };
 export type SrcSchema = { src?: string };
 export type HandleActionSchema = { handleAction?: any };

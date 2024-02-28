@@ -1,32 +1,47 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useLocation, useNavigate } from "react-router-dom";
-import { getUniqueKey } from "../../../../../../Inventory_module/src/utils/methods/stringMethods";
+import { getUniqueKey } from "../../../../../../Inventory_module/src/utils/methods/stringMethods.ts";
+import Logo from "../../../assets/img/Vector.svg";
+import { BiChevronDown, BiChevronLeft } from "react-icons/bi";
+
+import {
+  Dashboard,
+  Inventory,
+  People,
+  Sales,
+  Purcahse,
+} from "../../../assets/img/index.ts";
 
 export const Sidebar = () => {
   // Hooks
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const inventorySidebar = (id: number) => [
+  const inventorySidebar = () => [
     {
       label: "Dashboard",
       link: `/dashboard`,
+      icon: Dashboard,
     },
     {
-      label: "View Inventory",
-      link: `/item/${id}`,
+      label: "Inventory",
+      link: `/inventory`,
+      icon: Inventory,
     },
     {
-      label: "Auto Reordering",
-      link: `/reorder/${id}`,
+      label: "Purchase",
+      link: `/purcahse`,
+      icon: Purcahse,
     },
     {
-      label: "Track Product",
-      link: `/track/${id}`,
+      label: "Sales",
+      link: `/sales`,
+      icon: Sales,
     },
     {
-      label: "Supplier Information",
-      link: `/supplier/${id}`,
+      label: "Customer Retention",
+      link: `/customer`,
+      icon: People,
     },
   ];
 
@@ -38,16 +53,27 @@ export const Sidebar = () => {
   //   Active css
 
   return (
-    <aside className="min-w-[14rem] px-5 py-3 hidden md:flex md:flex-col gap-3 justify-start border-r-[1px] border-primary-100 bg-gray-300 cursor-pointer">
-      {inventorySidebar(1)?.map(({ label, link }: any, idx: number) => (
-        <p
-          key={getUniqueKey(idx, label)}
-          onClick={() => navigate(link)}
-          className={getActiveCss(link)}
-        >
-          {label}
-        </p>
-      ))}
+    <aside className="h-full   py-4 hidden md:flex md:flex-col gap-4 justify-start  border-r-[1px] border-primary-100  cursor-pointer">
+      <div className="logo flex items-center justify-between text-2xl gap-3 px-5">
+        <img src={Logo} alt="enterleaf" className="h-20 w-[150px]" />
+        <BiChevronLeft />
+      </div>
+      <div className="flex flex-col gap-2">
+        {inventorySidebar(1)?.map(({ label, link, icon }: any, idx: number) => (
+          <div
+            className="flex w-full py-2 px-5 justify-between items-center border-b-2 border-salte-600 gap-2"
+            key={getUniqueKey(idx, label)}
+          >
+            <div className="flex gap-2 l1-r">
+              <img src={icon} alt="menu icon" />
+              <p onClick={() => navigate(link)} className={getActiveCss(link)}>
+                {label}
+              </p>
+            </div>
+            {idx != 0 ? <BiChevronDown size={20} /> : ""}
+          </div>
+        ))}
+      </div>
     </aside>
   );
 };

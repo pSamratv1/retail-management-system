@@ -1,68 +1,118 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.primary_dark {
+  color: "#1A227D";
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.primary_medium {
+  color: "#4339F2";
 }
-a:hover {
-  color: #535bf2;
+.primary {
+  color: "#0E84ED";
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.successful {
+  color: "#99D045";
+}
+.reject {
+  color: "#FA3E3E";
+}
+.pending {
+  color: "#E6A000";
+}
+.black {
+  color: "#1E1E1E";
+}
+.grey {
+  color: "#4B4B4B";
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.white {
+  color: "#FFFFFF";
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 125%;
 }
-button:hover {
-  border-color: #646cff;
+.h2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 125%;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 125%;
+}
+.h5 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 125%;
+}
+.p1-r {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+}
+.p1-b {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+}
+.p2-r {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+}
+.p2-b {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 150%;
+}
+.p3-r {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 150%;
+}
+.p3-b {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 150%;
+}
+.l1-r {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+}
+.l1-b {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 125%;
+}
+.l2-r {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+}
+.l2-b {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 125%;
+}
+.l3-r {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 125%;
+}
+.l3-b {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 125%;
 }

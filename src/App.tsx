@@ -1,12 +1,8 @@
 import "./App.css";
-import { MainRoute } from "./utils/routes";
+import { MainRoute } from "./utils/routes/MainRoute.tsx";
 
-function App() {
-  return (
-    <>
-      <MainRoute />
-    </>
-  );
-}
+const App = () => {
+  return <MainRoute />;
+};
 
 export default App;

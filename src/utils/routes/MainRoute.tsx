@@ -1,9 +1,9 @@
-import { CommonLayout } from "../../helpers/components/common";
+import CommonLayout from "../../helpers/components/common/layouts/CommonLayout.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ErrorPage404 } from "../../views";
+import { ErrorPage404 } from "../../views/index.ts";
 // import ItemPage from "../../views/organization/pages/ItemPage";
 
-export default function MainRoute() {
+export function MainRoute() {
   return (
     <BrowserRouter>
       <Routes>

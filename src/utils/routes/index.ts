@@ -1,1 +1,1 @@
-export { default as MainRoute } from "./MainRoute";
+export { MainRoute } from "./MainRoute.tsx";

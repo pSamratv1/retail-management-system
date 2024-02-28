@@ -15,7 +15,7 @@ import {
   HrefSchema,
   LabelSchema,
   ColorSchema,
-} from "../../GlobalSchema";
+} from "../../GlobalSchema.tsx";
 
 // buttons
 export interface ButtonSchema
