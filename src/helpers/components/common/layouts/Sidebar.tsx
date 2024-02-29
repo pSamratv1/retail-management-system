@@ -64,13 +64,14 @@ export const Sidebar = () => {
             className="flex w-full py-2 px-5 justify-between items-center border-b-2 border-salte-600 gap-2"
             key={getUniqueKey(idx, label)}
           >
-            <div className="flex gap-2 l1-r">
+            <div className="flex gap-2 l1-r ">
               <img src={icon} alt="menu icon" />
               <p onClick={() => navigate(link)} className={getActiveCss(link)}>
                 {label}
               </p>
             </div>
             {idx != 0 ? <BiChevronDown size={20} /> : ""}
+            {cdcs}
           </div>
         ))}
       </div>
