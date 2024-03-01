@@ -1,9 +1,9 @@
 import {
-  RenderItemTableBody,
+  renderItemTableBody,
   renderItemTableHead,
-} from "../../utils/methods/itemProps.tsx";
-import Pagination from "../../helpers/components/common/table/Pagination.tsx";
-import Table from "../../helpers/components/common/table/Table.tsx";
+} from "../../../utils/methods/itemProps.tsx";
+import Pagination from "../../../helpers/components/common/table/Pagination.tsx";
+import Table from "../../../helpers/components/common/table/Table.tsx";
 import { useFilters, useSortBy, useTable } from "react-table";
 import { useRef } from "react";
 
@@ -51,7 +51,7 @@ const ViewItemTable = ({ columns, data }: Props) => {
       headerGroups,
       handleHeaderClick,
     }),
-    renderBody: RenderItemTableBody({ rows, prepareRow, getTableBodyProps }),
+    renderBody: renderItemTableBody({ rows, prepareRow, getTableBodyProps }),
   };
 
   // Pagination props
@@ -63,9 +63,9 @@ const ViewItemTable = ({ columns, data }: Props) => {
     css: {},
   };
   return (
-    <div className="w-full h-full flex flex-col text-[14px] font-medium gap-2">
+    <div className="w-full h-full flex flex-col text-md font-medium gap-2">
       <Table {...tableProps} />
-      {/* <Pagination {...paginateProps} /> */}
+      <Pagination {...paginateProps} />
     </div>
   );
 };

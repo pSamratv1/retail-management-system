@@ -5,7 +5,7 @@ import {
   ITEM_TABLE_MEMO,
 } from "../../../utils/constants/tableConstant.tsx";
 import TableActions from "../../../helpers/components/common/table/TableActions.tsx";
-import ViewItemTable from "../../../views/components/ViewItemTable.tsx";
+import ViewItemTable from "../../components/tables/ViewItemTable.tsx";
 
 const ProductConfig = () => {
   // Memo for column and data
@@ -23,10 +23,10 @@ const ProductConfig = () => {
     ...item,
     action: <TableActions {...getRoutes(item.id)} />,
   }));
-  console.log(datas, "datas");
-  console.log(columns, "Columns");
+
   // console.log(datas, "anotherData");
   const viewItemTableProps = { columns, data: datas };
+
   return (
     <div className="flex flex-col h-full w-full px-6 py-3 gap-4">
       <PageLayout />

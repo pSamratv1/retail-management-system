@@ -11,8 +11,8 @@ const PageLayout = () => {
         Inventory <BiChevronRight />
         Items
       </div>
-      <div className="flex w-full justify-between py-2 px-2">
-        <div className="h3 font-extrabold">Items</div>
+      <div className="flex w-full justify-between px-2">
+        <div className="flex items-center h3 font-extrabold">Items</div>
         <div className="flex items-center px-2 gap-2 h-10 hover:bg-green-600 hover:text-[#FFFFFF] rounded-md cursor-pointer transition duration-300">
           <img
             className="h-[21px] text-[#018134] w-6 hover:text-[#FFFFFF]"

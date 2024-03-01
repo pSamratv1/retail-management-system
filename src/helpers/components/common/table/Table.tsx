@@ -11,19 +11,13 @@ export default function Table(props: CommonTableSchema) {
     renderBody,
   } = props;
   return (
-    <div className="w-full flex-1 max-h-[calc(100vh-60px-52px)] scrollbar scrollbar-mt-52px overflow-y-scroll">
+    <div className="w-full flex-1 max-h-[calc(100vh-300px)] border-[2px] border-[#C7C7C7]  rounded-lg scrollbar scrollbar-mt-52px overflow-y-scroll">
       <table
         ref={currentTable}
         className="w-full table-fixed"
         {...getTableProps()}
       >
-        <thead
-          style={{
-            color: "#ffffff",
-            fontSize: "20px",
-          }}
-          className="sticky text-left top-0 w-full bg-secondary-200 text-secondary-800 text-[20px]"
-        >
+        <thead className="sticky text-left top-0 w-full bg-[#F1F1F1]">
           {renderHead}
         </thead>
         <tbody {...getTableBodyProps()}>{renderBody}</tbody>

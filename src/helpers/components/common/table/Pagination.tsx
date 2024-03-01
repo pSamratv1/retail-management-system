@@ -11,7 +11,7 @@ import {
   nextLinkClassName,
 } from "./TableCss.js";
 import { CommonPaginationSchema } from "./TableSchema.tsx";
-import ReactPaginate from "react-paginate/index.ts";
+import ReactPaginate from "react-paginate";
 
 export default function Pagination(props: CommonPaginationSchema) {
   // Props
@@ -31,28 +31,28 @@ export default function Pagination(props: CommonPaginationSchema) {
         <>Loading...</>
       ) : (
         <div className={containerClassName}>
-       <ReactPaginate />
-          // key={paginateKey}
-          // forcePage={currentPage > 1 ? currentPage - 1 : 0}
-          // pageCount={paginationCount <= 1 ? 1 : paginationCount}
-          // previousLabel={prevLabel}
-          // nextLabel={nextLabel}
-          // marginPagesDisplayed={1}
-          // pageRangeDisplayed={4}
-          // onPageChange={handlePageClick}
-          // renderOnZeroPageCount={null}
-          // pageClassName={pageClassName}
-          // containerClassName={containerClassName}
-          // activeClassName={activeClassName(paginationCount)}
-          // pageLinkClassName={pageLinkClassName(paginationCount)}
-          // previousClassName={previousClassName(hidePrevIcon)}
-          // previousLinkClassName={previousLinkClassName(
-          //   currentPage,
-          //   paginationCount
-          // )}
-          // nextClassName={nextClassName(hideNextIcon)}
-          // nextLinkClassName={nextLinkClassName(currentPage, paginationCount)}
-         
+          <ReactPaginate
+            // key={paginateKey}
+            forcePage={currentPage > 1 ? currentPage - 1 : 0}
+            pageCount={paginationCount <= 1 ? 1 : paginationCount}
+            previousLabel={prevLabel}
+            nextLabel={nextLabel}
+            marginPagesDisplayed={1}
+            pageRangeDisplayed={4}
+            onPageChange={handlePageClick}
+            renderOnZeroPageCount={null}
+            pageClassName={pageClassName}
+            containerClassName={containerClassName}
+            activeClassName={activeClassName(paginationCount)}
+            pageLinkClassName={pageLinkClassName(paginationCount)}
+            previousClassName={previousClassName(hidePrevIcon)}
+            previousLinkClassName={previousLinkClassName(
+              currentPage,
+              paginationCount
+            )}
+            nextClassName={nextClassName(hideNextIcon)}
+            nextLinkClassName={nextLinkClassName(currentPage, paginationCount)}
+          />
         </div>
       )}
     </>

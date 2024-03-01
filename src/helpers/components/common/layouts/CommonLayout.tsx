@@ -9,7 +9,8 @@
 // import { RootState } from "../../../../../../Inventory_module/src/redux-app/store";
 import { Sidebar } from "./Sidebar.tsx";
 import Header from "./Header.tsx";
-import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
+// import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
+import AddItemForm from "../../../../views/components/form/add/AddItemForm.tsx";
 
 export default function CommonLayout() {
   // const dispatch = useAppDispatch();
@@ -57,7 +58,7 @@ export default function CommonLayout() {
       <div className="h-screen col-span-5 md:col-span-4 ">
         <Header />
         <div className="h-[calc(100vh-56px)] ">
-          <ProductConfig />
+          <AddItemForm />
         </div>
       </div>
     </div>

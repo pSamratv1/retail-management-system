@@ -1,10 +1,10 @@
 // import { Badge } from "helpers/components/common";
 // import CustomImage from "helpers/components/common/images/CustomImage";
 
-import { defaultThCss, tableThCss } from "utils/constants/table.ts";
+import { defaultThCss, tableThCss } from "../../../../utils/constants/table.ts";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const Table = (props: any) => {
+export const CustomTable = (props: any) => {
   // Props
   const {
     currentTable,
