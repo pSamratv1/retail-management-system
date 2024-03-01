@@ -1,4 +1,4 @@
-import { CommonTableSchema } from "./TableSchema";
+import { CommonTableSchema } from "./TableSchema.tsx";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function Table(props: CommonTableSchema) {

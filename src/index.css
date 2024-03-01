@@ -1,7 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "@fontsource/poppins";
 
+* {
+  font-family: "Poppins", sans-serif;
+}
 .primary_dark {
   color: "#1A227D";
 }
