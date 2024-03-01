@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 // import {
 //   GetAllInventoryServicesThunk,
 //   GetAllTrackThunk,
@@ -9,6 +9,7 @@ import { Outlet } from "react-router-dom";
 // import { RootState } from "../../../../../../Inventory_module/src/redux-app/store";
 import { Sidebar } from "./Sidebar.tsx";
 import Header from "./Header.tsx";
+import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
 
 export default function CommonLayout() {
   // const dispatch = useAppDispatch();
@@ -56,7 +57,7 @@ export default function CommonLayout() {
       <div className="h-screen col-span-5 md:col-span-4 ">
         <Header />
         <div className="h-[calc(100vh-56px)] ">
-          <Outlet />
+          <ProductConfig />
         </div>
       </div>
     </div>

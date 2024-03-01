@@ -69,7 +69,7 @@ export default {
         grey: {
           light: "#EDEDED",
           light_hover: "#E4E4E4",
-          light_active: "#c7C7C7",
+          light_active: "#C7C7C7",
           normal: "#4B4B4B",
           normal_hover: "#444444",
           normal_active: "#3C3C3C",
