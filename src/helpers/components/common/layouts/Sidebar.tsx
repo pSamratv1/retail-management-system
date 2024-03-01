@@ -59,7 +59,7 @@ export const Sidebar = () => {
         <BiChevronLeft />
       </div>
       <div className="flex flex-col gap-2">
-        {inventorySidebar(1)?.map(({ label, link, icon }: any, idx: number) => (
+        {inventorySidebar()?.map(({ label, link, icon }: any, idx: number) => (
           <div
             className="flex w-full py-2 px-5 justify-between items-center border-b-2 border-salte-600 gap-2"
             key={getUniqueKey(idx, label)}
@@ -71,7 +71,6 @@ export const Sidebar = () => {
               </p>
             </div>
             {idx != 0 ? <BiChevronDown size={20} /> : ""}
-            {cdcs}
           </div>
         ))}
       </div>
