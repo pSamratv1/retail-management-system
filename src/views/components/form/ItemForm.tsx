@@ -1,3 +1,4 @@
+import Label from "../../../../src/stories/Label.tsx";
 import SelectInput from "../../../helpers/components/common/forms/SelectInput.tsx";
 import TextInput from "../../../helpers/components/common/forms/TextInput.tsx";
 
@@ -21,54 +22,54 @@ const ItemForm = ({ formObj, form }: any) => {
     >
       <div className="grid grid-cols-12 sm:gap-4">
         <div className="col-span-12 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.item_name} />
+          <Label {...formObj.item_name} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-6 min-w-[160px] justify-items-start">
-          <SelectInput {...formObj.item_category} />
+          <Label {...formObj.item_category} />
         </div>
         <div className="col-span-6  min-w-[160px] justify-items-start">
-          <SelectInput {...formObj.item_brand} />
+          <Label {...formObj.item_brand} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-6 min-w-[160px] justify-items-start">
-          <SelectInput {...formObj.package} />
+          <Label {...formObj.package} />
         </div>
         <div className="col-span-6  min-w-[160px] justify-items-start">
-          <SelectInput {...formObj.retail_unit} />
+          <Label {...formObj.retail_unit} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-6 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.reorder_point} />
+          <Label {...formObj.reorder_point} />
         </div>
         <div className="col-span-6  min-w-[160px] justify-items-start">
-          <TextInput {...formObj.reorder_quantity} />
+          <Label {...formObj.reorder_quantity} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-6 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.retail_unit_margin} />
+          <Label {...formObj.retail_unit_margin} />
         </div>
         <div className="col-span-6  min-w-[160px] justify-items-start">
-          <TextInput {...formObj.wholesale_unit_margin} />
+          <Label {...formObj.wholesale_unit_margin} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-8 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.max_storage} />
+          <Label {...formObj.max_storage} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
         <div className="col-span-12 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.product_specification} />
+          <Label {...formObj.product_specification} />
         </div>
       </div>
       <div className="grid grid-cols-12  sm:gap-4">
-        <div className="col-span-12 min-w-[160px] justify-items-start">
-          <TextInput {...formObj.product_image} />
+        <div className=" col-span-12 min-w-[160px] justify-items-start">
+          <Label {...formObj.product_image} />
         </div>
       </div>
 

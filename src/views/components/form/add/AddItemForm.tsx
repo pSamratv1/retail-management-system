@@ -92,10 +92,19 @@ const AddItemForm = () => {
   const formObj: any = {
     item_name: {
       common: nameProps({}),
-
+      type: "input",
       ...remaining,
     },
     item_category: {
+      type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: categoryProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
@@ -103,13 +112,15 @@ const AddItemForm = () => {
     },
 
     item_brand: {
+      type: "select",
       common: brandProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
       css: { ...remaining.css },
     },
-    // ...remaining,
+    // // ...remaining,
     package: {
+      type: "select",
       common: packageProps({}),
       form: remaining.form,
       css: {
@@ -121,6 +132,7 @@ const AddItemForm = () => {
     },
 
     retail_unit: {
+      type: "select",
       common: retailUnitProps({}),
 
       form: remaining.form,
@@ -131,6 +143,7 @@ const AddItemForm = () => {
       actions: { ...remaining.actions },
     },
     reorder_point: {
+      type: "select",
       common: reorderPointProps({}),
       form: remaining.form,
 
@@ -141,36 +154,48 @@ const AddItemForm = () => {
     },
 
     reorder_quantity: {
+      type: "select",
       common: reorderQuantityProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
       css: { ...remaining.css },
     },
     retail_unit_margin: {
+      type: "input",
       common: retailMarginProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
       css: { ...remaining.css },
     },
     wholesale_unit_margin: {
+      type: "input",
       common: wholesaleMarginProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
       css: { ...remaining.css },
     },
     max_storage: {
+      type: "input",
       common: maxStorageProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
       css: { ...remaining.css },
     },
     product_specification: {
+      type: "input",
       common: productSpecificaitonProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
-      css: { ...remaining.css },
+      css: {
+        divCss:
+          " relative h-[200px] pt-1 flex flex-col gap-2 text-[11px] text-dark-100 w-11/12 w-full px-2",
+        inputCss:
+          "h-[150px] bg-input-100 rounded-md relative h-[5.5rem] flex px-2 gap-1 text-[11px] text-dark-100 justify-items-center  w-full",
+        ...remaining.css,
+      },
     },
     product_image: {
+      type: "input",
       common: productImageProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,

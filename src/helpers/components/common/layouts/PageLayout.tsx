@@ -1,8 +1,9 @@
 import { BiChevronRight } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
-import { Button } from "../index.ts";
+
 import { Export } from "../../../../helpers/assets/img/index.ts";
+import Button from "../../../../stories/Button.tsx";
 
 const PageLayout = () => {
   return (

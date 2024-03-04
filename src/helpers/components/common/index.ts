@@ -8,7 +8,6 @@ export { default as Badge } from "./badges/Badge";
 
 // buttons
 export { default as AddButton } from "./buttons/AddButton";
-export { default as Button } from "./buttons/Button";
 export { default as CloseIconButton } from "./buttons/CloseIconButton";
 export { default as EditButton } from "./buttons/EditButton";
 export { default as ExportButton } from "./buttons/ExportButton";
@@ -25,7 +24,7 @@ export { InventoryCard } from "./cards/InventoryCard";
 export { FormSpanError } from "./errors/FormSpanError";
 
 // forms
-export { default as AuthFormContainer } from "./forms/AuthFormContainer";
+// export { default as AuthFormContainer } from "./forms/AuthFormContainer";
 export { default as CheckboxInput } from "./forms/CheckboxInput";
 export { default as PasswordInput } from "./forms/PasswordInput";
 export { default as SelectInput } from "./forms/SelectInput";

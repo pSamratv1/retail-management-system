@@ -2,6 +2,7 @@
 
 import React from "react";
 
+// Define the structure of the controls that we need as a interface/type
 export interface ButtonProps {
   category: "large" | "medium" | "small";
   type: "primary" | "secondary";
@@ -11,6 +12,7 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
+// Construct a function based component for component and pass the props as the type of specific component
 const Button: React.FC<ButtonProps> = ({
   category,
   type,
@@ -19,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   disabled = false,
 }) => {
+  // Construct an individual function having switch cases to provide the style based on the cases
   const getButtonCategoryCss = (category: string) => {
     switch (category) {
       case "large":
@@ -55,10 +58,12 @@ const Button: React.FC<ButtonProps> = ({
         return "";
     }
   };
+  // At last pass all the css cases into the main class name as needed
   const buttonClass = `button flex items-center justify-center bg-primary ${getButtonCategoryCss(
     category
   )} ${getButtonTypeCss(type)} ${getButtonVariationCss(variation)}`;
 
+  // Finally return the component to render
   return (
     <button className={buttonClass} disabled={disabled}>
       {icon && <span className="icon">{icon}</span>}
