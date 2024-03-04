@@ -1,12 +1,11 @@
 import { FormSpanError } from "../helpers/components/common";
 import { getFormErrorMsg } from "../utils/methods/formMethods";
-
 // Define the structure of the controls that we need as a interface/type
 export interface LabelProps {
   type: "input" | "select" | "search" | "date";
-  options: {
+  options?: {
     value: string;
-    lable: string;
+    label: string;
   }[];
   common: {
     input: string;
@@ -22,7 +21,14 @@ export interface LabelProps {
     handleKeyDown: () => void;
     handleOnChange: () => void;
   };
-  form: any;
+  form: {
+    register: any;
+    errors: any;
+    reset?: any;
+    control?: any;
+    handleSubmit?: any;
+    onSubmit?: any;
+  };
   css?: {
     divCss: string;
     labelCss: string;
@@ -120,7 +126,7 @@ const Label: React.FC<LabelProps> = (props) => {
                 <option
                   key={`${idx}. ${item.value}`}
                   value={item.value}
-                  className="flex px-2 py-3 w-full h-6"
+                  className="space-y-3"
                 >
                   {item.label}
                 </option>
