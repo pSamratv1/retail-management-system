@@ -6,6 +6,7 @@ import {
 } from "../../../utils/constants/tableConstant.tsx";
 import TableActions from "../../../helpers/components/common/table/TableActions.tsx";
 import ViewItemTable from "../../components/tables/ViewItemTable.tsx";
+import AddItemForm from "../../../views/components/form/add/AddItemForm.tsx";
 
 const ProductConfig = () => {
   // Memo for column and data
@@ -28,9 +29,10 @@ const ProductConfig = () => {
   const viewItemTableProps = { columns, data: datas };
 
   return (
-    <div className="flex flex-col h-full w-full px-6 py-3 gap-4">
+    <div className="flex flex-col h-full w-full px-6 py-3 gap-4 ">
       <PageLayout />
-      <ViewItemTable {...viewItemTableProps} />
+      {/* <ViewItemTable {...viewItemTableProps} /> */}
+      <AddItemForm />
     </div>
   );
 };

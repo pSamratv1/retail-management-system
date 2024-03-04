@@ -1,50 +1,87 @@
-import type { Meta, StoryObj } from '@storybook/react';
+// Button.stories.tsx
 
-import { Button } from './Button';
+import { Meta, StoryObj } from "@storybook/react";
+import Button from "./Button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
+  title: "Button",
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    category: {
+      control: {
+        type: "select",
+        options: ["large", "medium", "small"],
+      },
+    },
+    type: {
+      control: {
+        type: "select",
+        options: ["primary", "secondary"],
+      },
+    },
+    variation: {
+      control: {
+        type: "select",
+        options: ["default", "hover", "icon", "disabled", "disabled-icon"],
+      },
+    },
+    text: { control: "text" },
+    icon: { control: null },
+    disabled: { control: "boolean" },
   },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    category: "medium",
+    type: "primary",
+    variation: "default",
+    text: "Default Button",
+    disabled: false,
   },
 };
 
-export const Secondary: Story = {
+export const Hover: Story = {
   args: {
-    label: 'Button',
+    category: "medium",
+    type: "primary",
+    variation: "hover",
+    text: "Hover Button",
+    disabled: false,
   },
 };
 
-export const Large: Story = {
+export const Icon: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    category: "medium",
+    type: "primary",
+    variation: "icon",
+    text: "Button",
+    icon: "",
+    disabled: false,
   },
 };
 
-export const Small: Story = {
+export const Disabled: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    category: "medium",
+    type: "primary",
+    variation: "disabled",
+    text: "Disabled Button",
+    disabled: true,
+  },
+};
+
+export const DisabledIcon: Story = {
+  args: {
+    category: "medium",
+    type: "primary",
+    variation: "disabled-icon",
+    text: "Disabled Icon Button",
+    icon: "",
+    disabled: true,
   },
 };

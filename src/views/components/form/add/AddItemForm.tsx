@@ -17,6 +17,22 @@ import {
   wholesaleMarginProps,
 } from "../formProps.tsx";
 import ItemForm from "../ItemForm.tsx";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+interface FormData {
+  item_name: string;
+  item_category: string;
+  item_brand: string;
+  package: string;
+  retail_unit: string;
+  reorder_point: string;
+  reorder_quantity: string | number;
+  retail_unit_margin: string | number;
+  wholesale_unit_margin: string | number;
+  max_stage: string;
+  product_specification: string;
+  product_image: string;
+}
 
 const AddItemForm = () => {
   // OnSubmit handler
@@ -44,7 +60,7 @@ const AddItemForm = () => {
     // };
     // dispatch(CreateInventoryThunk(updatedData));
     // // Now, updatedData contains the original data excluding
-    // reset();
+    reset();
   };
   // validations
   const validationSchema: any = AddItemFormValidation();
@@ -76,29 +92,28 @@ const AddItemForm = () => {
   const formObj: any = {
     item_name: {
       common: nameProps({}),
+
       ...remaining,
     },
     item_category: {
       common: categoryProps({}),
-
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
 
     item_brand: {
       common: brandProps({}),
-
+      actions: { ...remaining.actions },
       form: remaining.form,
+      css: { ...remaining.css },
     },
     // ...remaining,
     package: {
       common: packageProps({}),
       form: remaining.form,
-
       css: {
-        divCss:
-          "min-w-[140px] col-span-7 relative h-[75px] pt-1 flex flex-col gap-1 text-[11px] text-dark-100 w-11/12 min-w-[4.6rem] px-2 sm:min-w-full md:min-w-full",
-        inputCss:
-          "bg-input-100 rounded-md relative h-[2.5rem] flex px-2 gap-1 text-[11px] text-dark-100 justify-items-center w-[6rem] md:px-[6px]",
+        ...remaining.css,
       },
       actions: { ...remaining.actions },
       // ...remaining,
@@ -111,10 +126,7 @@ const AddItemForm = () => {
       form: remaining.form,
 
       css: {
-        divCss:
-          "min-w-[45px] col-span-4 relative h-[75px] pt-1 flex flex-col gap-1 text-[11px] text-dark-100 w-11/12 w-full px-[3.2px] sm:min-w-[3rem] sm:px-[6px] md:px-[8px] ",
-        inputCss:
-          "bg-input-100 rounded-md h-[2.5rem] flex gap-1 text-[11px] text-dark-100 justify-items-center  w-[4.6rem] ",
+        ...remaining.css,
       },
       actions: { ...remaining.actions },
     },
@@ -123,44 +135,53 @@ const AddItemForm = () => {
       form: remaining.form,
 
       css: {
-        divCss:
-          "min-w-[140px] col-span-8 relative h-[75px] pt-1 flex flex-col gap-1 text-[11px] text-dark-100 w-11/12 w-full px-2 sm:min-w-full md:min-w-full",
-        inputCss:
-          "bg-input-100 rounded-md relative h-[2.5rem] flex px-2 gap-1 text-[11px] text-dark-100 justify-items-center w-[6rem] md:px-[6px]",
+        ...remaining.css,
       },
       actions: { ...remaining.actions },
     },
 
     reorder_quantity: {
       common: reorderQuantityProps({}),
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
     retail_unit_margin: {
       common: retailMarginProps({}),
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
     wholesale_unit_margin: {
       common: wholesaleMarginProps({}),
-
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
     max_storage: {
       common: maxStorageProps({}),
-
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
     product_specification: {
       common: productSpecificaitonProps({}),
-
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
     product_image: {
       common: productImageProps({}),
-
-      ...remaining,
+      actions: { ...remaining.actions },
+      form: remaining.form,
+      css: { ...remaining.css },
     },
   };
-  return <ItemForm formObj={formObj} form={form} />;
+  return (
+    <div className="max-w-full h-full">
+      <ItemForm formObj={formObj} form={form} />
+    </div>
+  );
 };
 
 export default AddItemForm;

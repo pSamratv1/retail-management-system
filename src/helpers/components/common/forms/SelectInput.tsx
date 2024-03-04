@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FormSpanError } from "../errors/FormSpanError";
+import { SelectInputSchema } from "../../../../utils/schemas/helpers/components/ComponentSchema.tsx";
+import { FormSpanError } from "../errors/FormSpanError.tsx";
 import {
   formDivCss,
   formErrorCss,
   formInputCss,
   formLabelCss,
-} from "./sub/props";
-import { SelectInputSchema } from "../../../../../../Inventory_module/src/utils/schemas/helpers/components/ComponentSchema";
-import { getFormErrorMsg } from "../../../../../../Inventory_module/src/utils/methods/formMethods";
+} from "./sub/props.tsx";
+import { getFormErrorMsg } from "../../../../utils/methods/formMethods.ts";
 
 export default function SelectInput(props: SelectInputSchema) {
   // Props

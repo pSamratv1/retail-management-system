@@ -11,6 +11,7 @@ import { Sidebar } from "./Sidebar.tsx";
 import Header from "./Header.tsx";
 // import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
 import AddItemForm from "../../../../views/components/form/add/AddItemForm.tsx";
+import { Outlet } from "react-router-dom";
 
 export default function CommonLayout() {
   // const dispatch = useAppDispatch();
@@ -51,14 +52,14 @@ export default function CommonLayout() {
     //     </main>
     //   </div>
     // </div>
-    <div className="w-screen h-screen grid grid-rows-12 grid-cols-5">
+    <div className="w-full h-screen grid grid-rows-12 grid-cols-5">
       <div className="h-full row-span-12 hidden md:block md:col-span-1 ">
         <Sidebar />
       </div>
       <div className="h-screen col-span-5 md:col-span-4 ">
         <Header />
-        <div className="h-[calc(100vh-56px)] ">
-          <AddItemForm />
+        <div className="h-[calc(100vh-56px)]">
+          <Outlet />
         </div>
       </div>
     </div>
