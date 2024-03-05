@@ -136,6 +136,41 @@ const Label: React.FC<LabelProps> = (props) => {
           {errorMsg && <FormSpanError {...errorProps} />}
         </div>
       )}
+      {type === "search" && (
+        <div className={`${finalDivCss}`}>
+          {label && (
+            <label className={finalLabelCss} htmlFor={input}>
+              {label} {showImportant && <span className="text-red-400">*</span>}
+            </label>
+          )}
+          <div className="flex">
+            <select
+              id={`${input}-select`}
+              {...register(input)}
+              className={`${finalInputCss} ${border}` + "[&>*]:p-8 w-20"}
+              type="text"
+              placeholder={placeholder}
+              key={`${input}-select`}
+              defaultValue={defaultValue || ""}
+              onClick={handleClick}
+              onChange={handleOnChange}
+              onKeyUp={handleKeyUp}
+              onKeyDown={handleKeyDown}
+            >
+              {options?.map((item: any, idx: number) => (
+                <option
+                  key={`${idx}. ${item.value}`}
+                  value={item.value}
+                  className="space-y-3"
+                >
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          {errorMsg && <FormSpanError {...errorProps} />}
+        </div>
+      )}
     </>
   );
 };
