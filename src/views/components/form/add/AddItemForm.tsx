@@ -92,7 +92,7 @@ const AddItemForm = () => {
   const formObj: any = {
     item_name: {
       common: nameProps({}),
-      type: "input",
+      type: "search",
       ...remaining,
     },
     item_category: {
@@ -113,6 +113,14 @@ const AddItemForm = () => {
 
     item_brand: {
       type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: brandProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,
@@ -121,6 +129,14 @@ const AddItemForm = () => {
     // // ...remaining,
     package: {
       type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: packageProps({}),
       form: remaining.form,
       css: {
@@ -133,6 +149,14 @@ const AddItemForm = () => {
 
     retail_unit: {
       type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: retailUnitProps({}),
 
       form: remaining.form,
@@ -144,6 +168,14 @@ const AddItemForm = () => {
     },
     reorder_point: {
       type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: reorderPointProps({}),
       form: remaining.form,
 
@@ -155,6 +187,14 @@ const AddItemForm = () => {
 
     reorder_quantity: {
       type: "select",
+      options: [
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+        { value: "1", label: "One" },
+      ],
       common: reorderQuantityProps({}),
       actions: { ...remaining.actions },
       form: remaining.form,

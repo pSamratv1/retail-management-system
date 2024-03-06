@@ -11,7 +11,7 @@ export default function Table(props: CommonTableSchema) {
     renderBody,
   } = props;
   return (
-    <div className="w-full flex-1 max-h-[calc(100vh-300px)] border-[2px] border-[#C7C7C7]  rounded-lg scrollbar scrollbar-mt-52px overflow-y-scroll">
+    <div className="w-full  max-h-[calc(100vh-300px)] border-[1px] border-[#C7C7C7]  rounded-lg scrollbar scrollbar-mt-52px overflow-y-scroll">
       <table
         ref={currentTable}
         className="w-full table-fixed"

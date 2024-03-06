@@ -52,13 +52,16 @@ export default function CommonLayout() {
     //     </main>
     //   </div>
     // </div>
-    <div className="w-full h-screen grid grid-rows-12 grid-cols-5">
-      <div className="h-full row-span-12 hidden md:block md:col-span-1 ">
+    <div className="relative w-full h-screen grid grid-cols-12">
+      <div className="z-100 fixed h-full col-span-2">
         <Sidebar />
       </div>
-      <div className="h-screen col-span-5 md:col-span-4 ">
-        <Header />
-        <div className="h-[calc(100vh-56px)]">
+
+      <div className="ml-[14.8rem] w-[calc(100vw-15.85rem)]  flex flex-col col-span-10 ">
+        <div className="z-[100] sticky top-0 flex h-[56px] w-full justify-end items-center px-8 border-b-2 border-primary-100 bg-[#ffffff]">
+          <Header />
+        </div>
+        <div className="justify-end items-center h-[calc(100vh-56px)] ">
           <Outlet />
         </div>
       </div>

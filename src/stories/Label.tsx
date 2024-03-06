@@ -1,8 +1,9 @@
+import { IoSearch } from "react-icons/io5";
 import { FormSpanError } from "../helpers/components/common";
 import { getFormErrorMsg } from "../utils/methods/formMethods";
 // Define the structure of the controls that we need as a interface/type
 export interface LabelProps {
-  type: "input" | "select" | "search" | "date";
+  type: "input" | "select" | "search-start" | "search-end";
   options?: {
     value: string;
     label: string;
@@ -104,7 +105,7 @@ const Label: React.FC<LabelProps> = (props) => {
       {type === "select" && (
         <div className={`${finalDivCss}`}>
           {label && (
-            <label className={finalLabelCss} htmlFor={input}>
+            <label className={finalLabelCss} htmlFor={`${input}-select`}>
               {label} {showImportant && <span className="text-red-400">*</span>}
             </label>
           )}
@@ -136,19 +137,19 @@ const Label: React.FC<LabelProps> = (props) => {
           {errorMsg && <FormSpanError {...errorProps} />}
         </div>
       )}
-      {type === "search" && (
+      {type === "search-start" && (
         <div className={`${finalDivCss}`}>
           {label && (
-            <label className={finalLabelCss} htmlFor={input}>
+            <label className={finalLabelCss} htmlFor={`${input}-search-start`}>
               {label} {showImportant && <span className="text-red-400">*</span>}
             </label>
           )}
-          <div className="flex">
-            <select
-              id={`${input}-select`}
+          <div className="relative w-full flex justify-end">
+            <input
+              id={`${input}-search-start`}
               {...register(input)}
               className={`${finalInputCss} ${border}` + "[&>*]:p-8 w-20"}
-              type="text"
+              type="search"
               placeholder={placeholder}
               key={`${input}-select`}
               defaultValue={defaultValue || ""}
@@ -156,17 +157,18 @@ const Label: React.FC<LabelProps> = (props) => {
               onChange={handleOnChange}
               onKeyUp={handleKeyUp}
               onKeyDown={handleKeyDown}
-            >
-              {options?.map((item: any, idx: number) => (
-                <option
-                  key={`${idx}. ${item.value}`}
-                  value={item.value}
-                  className="space-y-3"
-                >
-                  {item.label}
-                </option>
-              ))}
-            </select>
+            />
+
+            <IoSearch
+              style={{
+                position: "absolute",
+                marginRight: "8px",
+                color: "grey",
+                height: "40px",
+                width: "20px",
+                cursor: "pointer",
+              }}
+            />
           </div>
           {errorMsg && <FormSpanError {...errorProps} />}
         </div>

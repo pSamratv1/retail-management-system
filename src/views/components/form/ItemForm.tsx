@@ -74,7 +74,9 @@ const ItemForm = ({ formObj, form }: any) => {
       </div>
 
       <div className="flex mt-4 w-full justify-start">
-        <button>Addme</button>
+        <button type="submit" className="bg-blue-400">
+          Addme
+        </button>
       </div>
     </form>
   );

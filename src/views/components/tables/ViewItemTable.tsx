@@ -63,7 +63,7 @@ const ViewItemTable = ({ columns, data }: Props) => {
     css: {},
   };
   return (
-    <div className="w-full h-full flex flex-col text-md font-medium gap-2">
+    <div className="w-full h-full flex flex-col text-xs font-medium gap-2">
       <Table {...tableProps} />
       <Pagination {...paginateProps} />
     </div>

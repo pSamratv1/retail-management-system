@@ -31,10 +31,9 @@ const ProductConfig = () => {
 
   return (
     <div className="flex flex-col h-full w-full px-6 py-3 gap-4 ">
-      {/* <PageLayout />
-      <ViewItemTable {...viewItemTableProps} /> */}
+      <PageLayout />
+      <ViewItemTable {...viewItemTableProps} />
       <AddItemForm />
-      {/* <Label }/> */}
     </div>
   );
 };

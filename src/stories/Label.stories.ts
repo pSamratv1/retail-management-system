@@ -69,3 +69,17 @@ export const Select: Story = {
     ],
   },
 };
+
+export const Search: Story = {
+  args: {
+    type: "search",
+    common: {
+      input: "input",
+      label: "Label",
+      defaultValue: "",
+      placeholder: "Placeholder",
+      showImportant: false,
+    },
+    form,
+  },
+};

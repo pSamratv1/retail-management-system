@@ -53,7 +53,7 @@ export const Sidebar = () => {
   //   Active css
 
   return (
-    <aside className="h-full   py-4 hidden md:flex md:flex-col gap-4 justify-start  border-r-[1px] border-primary-100  cursor-pointer">
+    <aside className="z-[100] h-full w-full  py-4 hidden md:flex md:flex-col gap-4 justify-start  border-r-[1px] border-primary-100  cursor-pointer">
       <div className="logo flex items-center justify-between text-2xl gap-3 px-5">
         <img src={Logo} alt="enterleaf" className="h-20 w-[150px]" />
         <BiChevronLeft />
