@@ -2,7 +2,7 @@ import { StoryObj } from "@storybook/react";
 import Label from "./Label";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { AddItemFormValidation } from "views/components/form/formProps";
+import { AddItemFormValidation } from "../views/components/form/formProps";
 
 const validationSchema: any = AddItemFormValidation();
 // react-hook-form
@@ -25,7 +25,7 @@ const meta = {
     type: {
       control: {
         type: "select",
-        options: ["input", "select", "search", "date"],
+        options: ["input", "select", "search-start", "search-end"],
       },
     },
   },
@@ -70,9 +70,23 @@ export const Select: Story = {
   },
 };
 
-export const Search: Story = {
+export const SearchStart: Story = {
   args: {
-    type: "search",
+    type: "search-start",
+    common: {
+      input: "input",
+      label: "Label",
+      defaultValue: "",
+      placeholder: "Placeholder",
+      showImportant: false,
+    },
+    form,
+  },
+};
+
+export const SearchEnd: Story = {
+  args: {
+    type: "search-end",
     common: {
       input: "input",
       label: "Label",

@@ -3,10 +3,10 @@ export const defaultThCss = "",
   tableThCss = (isFlag: boolean) =>
     isFlag
       ? "hidden"
-      : "h-[52px] px-7 py-5 bg-gray-100 text-sm font-semibold  z-90 border-b-[2px] border-[#C7C7C7]",
+      : "h-[52px] px-7 py-5 bg-gray-100 text-sm font-semibold  z-90 border-b-[1px] border-[#C7C7C7]",
   tableTdCss = (isLastRow: boolean, isFlag?: boolean) => {
     const commonCss =
-      "text-md px-7 py-5 z-[-10]  border-y-[2px] border-[#C7C7C7]";
+      "text-md px-7 py-5 z-[-10]  border-y-[1px] border-[#C7C7C7]";
     const rowCss = `${commonCss} border-b-[1px] border-primary-lighter/50`;
     const hiddenCss = "hidden";
 
