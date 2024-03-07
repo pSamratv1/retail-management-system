@@ -17,7 +17,7 @@ const PageLayout = () => {
       </div>
       <div className="flex w-full justify-between px-2">
         <div className="flex items-center h3 font-extrabold">Items</div>
-        <div className="flex items-center px-2 gap-2 h-10 hover:bg-green-600 hover:text-[#FFFFFF] rounded-md cursor-pointer transition duration-300">
+        <div className="flex items-center px-2 gap-2 h-8 hover:bg-green-600 hover:text-[#FFFFFF] rounded-md cursor-pointer transition duration-300">
           <img
             className="h-[21px] text-[#018134] w-6 hover:text-[#FFFFFF]"
             src={Export}
@@ -28,7 +28,7 @@ const PageLayout = () => {
           </p>
         </div>
       </div>
-      <div className="h-12 flex justify-between px-2">
+      <div className="h-10 flex justify-between px-2">
         <div className="w-80 flex items-center">
           <input
             className="realtive h-full w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-500 appearance-none"
@@ -42,7 +42,7 @@ const PageLayout = () => {
         </div>
         <div className="flex h-full items-center">
           <Button
-            category="medium"
+            category="small"
             type="primary"
             text="Add"
             variation="icon"

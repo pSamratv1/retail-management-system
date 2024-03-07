@@ -1,6 +1,9 @@
+import { useAppDispatch } from "../../../helpers/hooks/useStoreHooks.ts";
+import Button from "../../../../src/stories/Button.tsx";
 import Label from "../../../../src/stories/Label.tsx";
 import SelectInput from "../../../helpers/components/common/forms/SelectInput.tsx";
 import TextInput from "../../../helpers/components/common/forms/TextInput.tsx";
+import { setAddItemTrue } from "../../../redux/retail-module/retailSlice.tsx";
 
 const ItemForm = ({ formObj, form }: any) => {
   // Props
@@ -11,7 +14,7 @@ const ItemForm = ({ formObj, form }: any) => {
   // Redux
 
   // Redux variables
-
+  const dispatch = useAppDispatch();
   // Validation
   // Hooks
   // Methods
@@ -74,9 +77,13 @@ const ItemForm = ({ formObj, form }: any) => {
       </div>
 
       <div className="flex mt-4 w-full justify-start">
-        <button type="submit" className="bg-blue-400">
-          Addme
-        </button>
+        <Button
+          category="small"
+          type="primary"
+          text="Save"
+          variation="hover"
+          onClick={() => dispatch(setAddItemTrue(true))}
+        />
       </div>
     </form>
   );

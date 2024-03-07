@@ -72,7 +72,7 @@ const Label: React.FC<LabelProps> = (props) => {
     css: {
       customCss:
         errorCss ??
-        "absolute top-[66px] text-red-400 text-[11px] leading-tight",
+        "absolute top-[75px] text-red-400 text-[11px] leading-tight",
     },
     title: errorMsg,
   };

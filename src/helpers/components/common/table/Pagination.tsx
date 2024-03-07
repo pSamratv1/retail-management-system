@@ -9,7 +9,7 @@ import {
   previousLinkClassName,
   nextClassName,
   nextLinkClassName,
-} from "./TableCss.js";
+} from "./TableCss.tsx";
 import { CommonPaginationSchema } from "./TableSchema.tsx";
 import ReactPaginate from "react-paginate";
 

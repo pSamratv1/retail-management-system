@@ -10,9 +10,11 @@ import AddItemForm from "../../../views/components/form/add/AddItemForm.tsx";
 import Label from "src/stories/Label.tsx";
 import { useAppSelector } from "../../../helpers/hooks/useStoreHooks.ts";
 import { RootState } from "src/redux/store.ts";
+import { RetailSlice } from "src/redux/retail-module/retailSlice.tsx";
+import { useSelector } from "react-redux";
 
 const ProductConfig = () => {
-  const isFlag = useAppSelector(
+  const { isFlag } = useSelector(
     (state: RootState) => state.Retail.retail.inventory.add
   );
   // Memo for column and data
@@ -37,7 +39,8 @@ const ProductConfig = () => {
   return (
     <div className="flex flex-col h-full w-full px-6 py-3 gap-4 scrollbar scrollbar-mt-30px overflow-y-scroll">
       <PageLayout />
-      {isFlag ? <ViewItemTable {...viewItemTableProps} /> : <AddItemForm />}
+      {/* <ViewItemTable {...viewItemTableProps} /> */}
+      {!isFlag ? <ViewItemTable {...viewItemTableProps} /> : <AddItemForm />}
     </div>
   );
 };

@@ -92,7 +92,7 @@ const AddItemForm = () => {
   const formObj: any = {
     item_name: {
       common: nameProps({}),
-      type: "search",
+      type: "input",
       ...remaining,
     },
     item_category: {
@@ -243,7 +243,7 @@ const AddItemForm = () => {
     },
   };
   return (
-    <div className="w-full h-full">
+    <div className="w-full  px-2 pb-8">
       <ItemForm formObj={formObj} form={form} />
     </div>
   );
