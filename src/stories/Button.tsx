@@ -10,6 +10,7 @@ export interface ButtonProps {
   text?: string;
   icon?: React.ReactNode;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
 // Construct a function based component for component and pass the props as the type of specific component
@@ -20,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   text = "Button",
   icon,
   disabled = false,
+  onClick,
 }) => {
   // Construct an individual function having switch cases to provide the style based on the cases
   const getButtonCategoryCss = (category: string) => {
@@ -65,7 +67,7 @@ const Button: React.FC<ButtonProps> = ({
 
   // Finally return the component to render
   return (
-    <button className={buttonClass} disabled={disabled}>
+    <button className={buttonClass} disabled={disabled} onClick={onClick}>
       {icon && <span className="icon">{icon}</span>}
       {text}
     </button>

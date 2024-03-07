@@ -31,11 +31,17 @@ export const initialState: RetailSliceSchema = {
 export const RetailSlice = createSlice({
   name: "retail",
   initialState,
-  reducers: {},
+  reducers: {
+    // Item Reducers
+    //  Add
+    setAddItemTrue: (state, action) => {
+      state.retail.inventory.add.isFlag = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder;
   },
 });
 
-export const {} = RetailSlice.actions;
+export const { setAddItemTrue } = RetailSlice.actions;
 export default RetailSlice.reducer;

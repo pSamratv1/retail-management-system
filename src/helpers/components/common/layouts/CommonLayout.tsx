@@ -9,6 +9,7 @@
 // import { RootState } from "../../../../../../Inventory_module/src/redux-app/store";
 import { Sidebar } from "./Sidebar.tsx";
 import Header from "./Header.tsx";
+import "../../../../index.css";
 // import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
 import AddItemForm from "../../../../views/components/form/add/AddItemForm.tsx";
 import { Outlet } from "react-router-dom";
@@ -57,11 +58,11 @@ export default function CommonLayout() {
         <Sidebar />
       </div>
 
-      <div className="ml-[14.8rem] w-[calc(100vw-15.85rem)]  flex flex-col col-span-10 ">
+      <div className="ml-[14.8rem] w-[calc(100vw-14.8rem)]  flex flex-col col-span-10 ">
         <div className="z-[100] sticky top-0 flex h-[56px] w-full justify-end items-center px-8 border-b-2 border-primary-100 bg-[#ffffff]">
           <Header />
         </div>
-        <div className="justify-end items-center h-[calc(100vh-56px)] ">
+        <div className="justify-end items-center max-h-[calc(100vh-56px)]">
           <Outlet />
         </div>
       </div>

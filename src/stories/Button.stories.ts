@@ -2,6 +2,9 @@
 
 import { StoryObj } from "@storybook/react";
 import Button from "./Button";
+const handleOnClick = () => {
+  alert("Clicked");
+};
 
 const meta = {
   title: "Button",
@@ -28,6 +31,7 @@ const meta = {
     text: { control: "text" },
     icon: { control: null },
     disabled: { control: "boolean" },
+    onClick: { handleOnClick },
   },
 };
 

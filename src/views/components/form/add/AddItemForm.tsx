@@ -243,7 +243,7 @@ const AddItemForm = () => {
     },
   };
   return (
-    <div className="max-w-full h-full">
+    <div className="w-full h-full">
       <ItemForm formObj={formObj} form={form} />
     </div>
   );

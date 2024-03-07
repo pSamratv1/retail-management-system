@@ -4,8 +4,11 @@ import { IoSearch } from "react-icons/io5";
 
 import { Export } from "../../../../helpers/assets/img/index.ts";
 import Button from "../../../../stories/Button.tsx";
+import { useAppDispatch } from "../../../hooks/useStoreHooks.ts";
+import { setAddItemTrue } from "../../../../redux/retail-module/retailSlice.tsx";
 
 const PageLayout = () => {
+  const dispatch = useAppDispatch();
   return (
     <>
       <div className="flex w-fit text-[#848484] items-center text-md">
@@ -44,6 +47,7 @@ const PageLayout = () => {
             text="Add"
             variation="icon"
             icon={<IoMdAdd />}
+            onClick={() => dispatch(setAddItemTrue(true))}
           />
         </div>
       </div>
