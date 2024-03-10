@@ -1,23 +1,6 @@
 import { StoryObj } from "@storybook/react";
 import Label from "./Label";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { AddItemFormValidation } from "../views/components/form/formProps";
 
-const validationSchema: any = AddItemFormValidation();
-// react-hook-form
-const {
-  register,
-  formState: { errors },
-} = useForm({
-  resolver: yupResolver(validationSchema),
-});
-
-// Form variables
-const form = {
-  register,
-  errors,
-};
 const meta = {
   title: "Label",
   component: Label,
@@ -44,7 +27,6 @@ export const Input: Story = {
       placeholder: "Placeholder",
       showImportant: false,
     },
-    form,
   },
 };
 
@@ -58,7 +40,7 @@ export const Select: Story = {
       placeholder: "Placeholder",
       showImportant: false,
     },
-    form,
+
     options: [
       { value: "1", label: "One" },
       { value: "2", label: "Two" },
@@ -80,7 +62,6 @@ export const SearchStart: Story = {
       placeholder: "Placeholder",
       showImportant: false,
     },
-    form,
   },
 };
 
@@ -94,6 +75,5 @@ export const SearchEnd: Story = {
       placeholder: "Placeholder",
       showImportant: false,
     },
-    form,
   },
 };

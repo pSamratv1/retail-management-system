@@ -1,6 +1,9 @@
 import { IoSearch } from "react-icons/io5";
 import { FormSpanError } from "../helpers/components/common";
 import { getFormErrorMsg } from "../utils/methods/formMethods";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AddItemFormValidation } from "../views/components/form/formProps";
 // Define the structure of the controls that we need as a interface/type
 export interface LabelProps {
   type: "input" | "select" | "search-start" | "search-end";
@@ -22,14 +25,7 @@ export interface LabelProps {
     handleKeyDown: () => void;
     handleOnChange: () => void;
   };
-  form: {
-    register: any;
-    errors: any;
-    reset?: any;
-    control?: any;
-    handleSubmit?: any;
-    onSubmit?: any;
-  };
+
   css?: {
     divCss: string;
     labelCss: string;
@@ -40,12 +36,21 @@ export interface LabelProps {
 
 // Construct a function based component for component and pass the props as the type of specific component
 const Label: React.FC<LabelProps> = (props) => {
+  const validationSchema: any = AddItemFormValidation();
+  // useForm variables
+  const {
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
   // Props
-  const { type, common, actions, form, css, options } = props;
+  const { type, common, actions, css, options } = props;
   // Props variables
   const { input, label, defaultValue, placeholder, showImportant, icon } =
     common;
-  const { register, errors } = form;
+
   const { handleClick, handleKeyUp, handleKeyDown, handleOnChange } =
     actions! || {};
   const { divCss, labelCss, inputCss, errorCss } = css! || {};
@@ -114,8 +119,6 @@ const Label: React.FC<LabelProps> = (props) => {
               id={`${input}-select`}
               {...register(input)}
               className={`${finalInputCss} ${border}` + "[&>*]:p-8 w-20"}
-              type="text"
-              placeholder={placeholder}
               key={`${input}-select`}
               defaultValue={defaultValue || ""}
               onClick={handleClick}

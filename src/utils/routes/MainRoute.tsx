@@ -8,7 +8,7 @@ export function MainRoute() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CommonLayout />}>
+        <Route path="/" element={<CommonLayout type="small" />}>
           {/* Retail module routes */}
           <Route path="/" element={<ProductConfig />} />
         </Route>
