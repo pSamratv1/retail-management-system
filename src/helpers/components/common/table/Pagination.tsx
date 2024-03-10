@@ -35,9 +35,9 @@ export default function Pagination(props: CommonPaginationSchema) {
             // key={paginateKey}
             forcePage={currentPage > 1 ? currentPage - 1 : 0}
             pageCount={paginationCount <= 1 ? 1 : paginationCount}
-            previousLabel={prevLabel}
-            nextLabel={nextLabel}
             marginPagesDisplayed={1}
+            previousLabel="" // Remove previous label
+            nextLabel=""
             pageRangeDisplayed={4}
             onPageChange={handlePageClick}
             renderOnZeroPageCount={null}
@@ -45,13 +45,6 @@ export default function Pagination(props: CommonPaginationSchema) {
             containerClassName={containerClassName}
             activeClassName={activeClassName(paginationCount)}
             pageLinkClassName={pageLinkClassName(paginationCount)}
-            previousClassName={previousClassName(hidePrevIcon)}
-            previousLinkClassName={previousLinkClassName(
-              currentPage,
-              paginationCount
-            )}
-            nextClassName={nextClassName(hideNextIcon)}
-            nextLinkClassName={nextLinkClassName(currentPage, paginationCount)}
           />
         </div>
       )}

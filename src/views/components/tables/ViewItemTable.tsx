@@ -58,7 +58,7 @@ const ViewItemTable = ({ columns, data }: Props) => {
   const paginateProps = {
     // isLoading,
     currentPage: 0,
-    paginationCount: 10,
+    paginationCount: 5,
     handlePageClick,
     css: {},
   };
