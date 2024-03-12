@@ -7,3 +7,4 @@ export { default as Export } from "./Export.svg";
 export { default as Delete } from "./Delete.svg";
 export { default as Edit } from "./Edit.svg";
 export { default as View } from "./View.svg";
+export { default as Logout } from "./Icon.svg";

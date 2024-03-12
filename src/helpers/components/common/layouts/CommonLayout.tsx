@@ -13,8 +13,11 @@ import "../../../../index.css";
 // import ProductConfig from "../../../../views/retail/pages/ProductConfig.tsx";
 import AddItemForm from "../../../../views/components/form/add/AddItemForm.tsx";
 import { Outlet } from "react-router-dom";
+export type CommonLayoutProps = {
+  type: "small" | "large";
+};
 
-export default function CommonLayout(type: string) {
+const CommonLayout = ({ type }: CommonLayoutProps) => {
   // const dispatch = useAppDispatch();
 
   // const { isSuccess } = useAppSelector(
@@ -55,10 +58,11 @@ export default function CommonLayout(type: string) {
     // </div>
     <div className="relative w-full h-screen grid grid-cols-12">
       {type === "large" ? <Sidebar type="large" /> : <Sidebar type="small" />}
-      {/*  */}
 
       <div
-        className={`flex flex-col col-span-${type === "large" ? "10" : "11"}`}
+        className={`${
+          type === "large" ? "col-span-10" : "col-span-11"
+        } flex flex-col `}
       >
         <div className="z-[100] sticky top-0 flex h-[56px] w-full justify-end items-center px-8 border-b-2 border-primary-100 bg-[#ffffff]">
           <Header />
@@ -69,4 +73,5 @@ export default function CommonLayout(type: string) {
       </div>
     </div>
   );
-}
+};
+export default CommonLayout;
